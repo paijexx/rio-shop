@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РИО | О нас</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo">РИО</a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li><a href="index.html" class="header__link header__link--active">О нас</a></li>
+                    <li><a href="vinyl.html" class="header__link">Винил</a></li>
+                    <li><a href="cds.html" class="header__link">CD-диски</a></li>
+                    <li><a href="contacts.html" class="header__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="header__cart-btn" id="cart-open-btn">
+                Корзина (<span id="cart-counter">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero__content">
+                <h1 class="hero__title">Музыка <br> Для твоей <br> коллекции</h1>
+                <p class="hero__text">
+                    Добро пожаловать в «РИО» — уютное пространство для истинных ценителей аналогового звука и редких музыкальных изданий. 
+                    Мы собираем лучшие релизы со всего мира, чтобы вы могли прочувствовать музыку каждой клеточкой своего тела.
+                </p>
+                <a href="vinyl.html" class="btn btn--hero">Смотреть винил</a>
+            </div>
+            <div class="hero__visual">
+                <img src="hero-vinyl.png" alt="Vinyl" class="hero__img">
+            </div>
+        </section>
+
+        <section class="feedback container">
+            <h2 class="section-title">Обратная связь & Спецзаказ</h2>
+            <div class="feedback__wrapper">
+                <p class="feedback__descr">Не нашли нужную пластинку или диск в каталоге? Оставьте запрос, и мы постараемся привезти её индивидуально для вас.</p>
+                <form class="feedback-form" id="feedback-form">
+                    <input type="email" placeholder="Ваш Email" class="feedback-form__input" required>
+                    <textarea placeholder="Какую пластинку или CD вы ищете? (Укажите исполнителя и название альбома)" class="feedback-form__input feedback-form__textarea" required></textarea>
+                    <button type="submit" class="btn">Отправить запрос</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal__content">
+            <button class="modal__close" id="cart-close-btn">&times;</button>
+            <h2 class="modal__title">Ваша корзина</h2>
+            <div class="modal__items" id="modal-items-list"></div>
+            <div class="modal__total">Итого: <span id="modal-total-price">0</span> ₽</div>
+            
+            <form class="order-form" id="order-form">
+                <h3 class="order-form__title">Оформление заказа</h3>
+                <div class="order-form__group">
+                    <label>Как заберете?</label>
+                    <select id="delivery-select" class="order-form__input">
+                        <option value="delivery">Доставка курьером</option>
+                        <option value="pickup">Самовывоз (Социалистическая, 52)</option>
+                    </select>
+                </div>
+                <div id="address-block">
+                    <input type="text" placeholder="Укажите адрес доставки" class="order-form__input" id="address-input" required>
+                </div>
+                <div id="pickup-block" style="display: none;">
+                    <p class="order-form__hint">Заказ будет ждать вас на кассе сегодня с 10:00 до 21:00.</p>
+                </div>
+                <button type="submit" class="btn btn--wide">Оплатить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">© 2026 РИО. Все права защищены.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
